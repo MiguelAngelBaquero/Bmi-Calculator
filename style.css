@@ -1,0 +1,22 @@
+body {
+  scroll-behavior: smooth;
+  /*color-scheme: dark;
+  color: aliceblue;
+  background-color: black;*/
+  font-family: "Poppins", sans-serif;
+}
+
+.footer__item {
+  text-decoration: none;
+  color: black;
+  /*color: aliceblue;*/
+}
+
+.input__container-in__label,
+.input__container-in__number {
+  display: none;
+}
+
+.modal {
+  display: none;
+}

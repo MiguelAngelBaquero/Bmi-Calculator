@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <script
+      src="https://kit.fontawesome.com/7f4cd9593e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" async></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav-bar">
+        <h1 class="header__nav-bar__title">BMI Calculator</h1>
+        <i class="header__nav-bar__icon fas fa-info-circle"></i>
+      </nav>
+    </header>
+    <form action="" class="input" onsubmit="return false">
+      <h2 class="input__title">Units</h2>
+      <div class="input__container-height">
+        <h3 class="input__container-height__title">Height</h3>
+        <input
+          type="radio"
+          name="height"
+          id="metric-height"
+          checked
+          class="input__container-height__radio"
+        />
+        <label for="metric-height" class="input__container-height__label"
+          >Metric</label
+        >
+        <input
+          type="radio"
+          name="height"
+          id="imperial-height"
+          class="input__container-height__radio"
+        />
+        <label for="imperial-height" class="input__container-height__label"
+          >Imperial</label
+        >
+      </div>
+      <div class="input__container-weight">
+        <h3 class="input__container-weight__title">weight</h3>
+        <input
+          type="radio"
+          name="weight"
+          id="metric-weight"
+          checked
+          class="input__container-weight__radio"
+        />
+        <label for="metric-weight" class="input__container-weight__label"
+          >Metric</label
+        >
+        <input
+          type="radio"
+          name="weight"
+          id="imperial-weight"
+          class="input__container-weight__radio"
+        />
+        <label for="imperial-weight" class="input__container-weight__label"
+          >Imperial</label
+        >
+      </div>
+      <h2 class="input__title">Data input</h2>
+      <div class="input__container-cm-ft">
+        <input
+          type="number"
+          name="height-cm-ft"
+          id="height-cm-ft"
+          placeholder="Height"
+          required
+          step="0.01"
+          min="30"
+          max="275"
+          class="input__container-cm-ft__number"
+        />
+        <label for="height-cm-ft" class="input__container-cm-ft__label"
+          >cm</label
+        >
+      </div>
+      <div class="input__container-in">
+        <input
+          type="number"
+          name="height-in"
+          id="height-in"
+          placeholder="Height"
+          step="0.01"
+          min="0"
+          max="11.99"
+          class="input__container-in__number"
+        />
+        <label for="height-in" class="input__container-in__label">in</label>
+      </div>
+      <div class="input__container-kg-lb">
+        <input
+          type="number"
+          name="weight-kg-lb"
+          id="weight-kg-lb"
+          placeholder="Weight"
+          required
+          step="0.01"
+          min="1"
+          max="225"
+          class="input__container-kg-lb__number"
+        />
+        <label for="weight-kg-lb" class="input__container-kg-lb__label"
+          >kg</label
+        >
+      </div>
+      <button type="submit" class="input__button" onclick="submitData()">
+        Calulate BMI
+      </button>
+    </form>
+    <section class="output">
+      <div class="output__container">
+        <div class="output__container__bmi-container">
+          <p class="output__container__bmi-container_bmi-value">0</p>
+          <p class="output__container__bmi-container_bmi-title">BMI</p>
+          <p class="output__container__bmi-container_bmi-tag">Normal</p>
+        </div>
+        <hr class="output__container__line" />
+        <h3 class="output__container__title">Information</h3>
+        <div class="output__container__meter-container">
+          <span class="output__container__meter-container_tag"
+            >Underweight</span
+          >
+          <span class="output__container__meter-container_tag">Normal</span>
+          <span class="output__container__meter-container_tag">Overweight</span>
+          <span class="output__container__meter-container_meter"></span>
+          <span class="output__container__meter-container_value">16</span>
+          <span class="output__container__meter-container_value">18.5</span>
+          <span class="output__container__meter-container_value">25</span>
+          <span class="output__container__meter-container_value">30</span>
+          <span class="output__container__meter-container_value">40</span>
+        </div>
+      </div>
+    </section>
+    <section class="modal">
+      <i class="modal__icon fas fa-times"></i>
+      <h3 class="modal__title">BMI Information</h3>
+      <p class="modal__paragraph">
+        BMI is a measurement of a person's leanness or corpulence based on their
+        height and weight, and is intended to quantify tissue mass. It is widely
+        used as a general indicator of whether a person has a healthy body
+        weight for their height. Specifically, the value obtained from the
+        calculation of BMI is used to categorize whether a person is
+        underweight, normal weight, overweight, or obese depending on what range
+        the value falls between.
+      </p>
+      <h3 class="modal__title">BMI table for adults</h3>
+      <table class="modal__table">
+        <tr>
+          <th class="modal__table__header">Category</th>
+          <th class="modal__table__header">BMI range - kg/m&#178;</th>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Severe Thinness</td>
+          <td class="modal__table__row">&#60;16</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Moderate Thinness</td>
+          <td class="modal__table__row">16 - 17</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Mild Thinness</td>
+          <td class="modal__table__row">17 - 18.5</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Normal</td>
+          <td class="modal__table__row">18.5 - 25</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Overweight</td>
+          <td class="modal__table__row">25 - 30</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Obese Class I</td>
+          <td class="modal__table__row">30 - 35</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Obese Class II</td>
+          <td class="modal__table__row">35 - 40</td>
+        </tr>
+        <tr>
+          <td class="modal__table__row">Obese Class III</td>
+          <td class="modal__table__row">&#62;40</td>
+        </tr>
+      </table>
+      <button class="modal__close-buton">Close</button>
+    </section>
+    <footer class="footer">
+      <span class="footer__item">
+        Made with <i class="fas fa-heart"></i> and
+        <i class="fas fa-mug-hot"></i> by Miguel Ángel Baquero</span
+      >
+      <a
+        href="https://github.com/MiguelAngelBaquero"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer__item"
+      >
+        <i class="footer__item__icon fab fa-github"></i>
+      </a>
+      <a
+        href="https://twitter.com/mickey_migue"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer__item"
+      >
+        <i class="footer__item__icon fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/mickey_migue"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer__item"
+      >
+        <i class="footer__item__icon fab fa-instagram"></i>
+      </a>
+    </footer>
+  </body>
+</html>
