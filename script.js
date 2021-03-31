@@ -42,7 +42,10 @@ const MIN_CM_VALUE = 30,
   FT_TO_IN_FACTOR = 12,
   CM_TO_M_FACTOR = 100,
   MIN_BMI_VALUE = 18.5,
-  NORMAL_BMI_VALUE = 25;
+  NORMAL_BMI_VALUE = 25,
+  DECIMAL_PLACES = 2,
+  DUMMIE_FALSY = "123456789",
+  DUMMIE_TRUTHY = "12";
 //aditional variables
 var mass = 0,
   height = 0,
@@ -96,7 +99,7 @@ function changeBmiTagAndValue() {
 
 //validation process
 function submitData() {
-  if (validateHeight() && validateMass()) {
+  if (validateHeight() && validateMass() && validateInputLenght()) {
     defineHeight();
     defineMass();
     calculateAfterValidation();
@@ -109,6 +112,36 @@ function submitData() {
 function calculateAfterValidation() {
   calculateBmi(mass, height);
   changeBmiTagAndValue();
+}
+
+//validate input lenght
+function validateInputLenght() {
+  let lenghtValidation;
+  isHeightMetric
+    ? getDecimalPart(inputCmFt.value).length <= DECIMAL_PLACES &&
+      getDecimalPart(inputKgLb.value).length <= DECIMAL_PLACES
+      ? (lenghtValidation = true)
+      : (lenghtValidation = false)
+    : getDecimalPart(inputCmFt.value).length <= DECIMAL_PLACES &&
+      getDecimalPart(inputInches.value).length <= DECIMAL_PLACES &&
+      getDecimalPart(inputKgLb.value).length <= DECIMAL_PLACES
+    ? (lenghtValidation = true)
+    : (lenghtValidation = false);
+  return lenghtValidation;
+}
+
+//returns only the decimal part of a number
+function getDecimalPart(number) {
+  let n, a;
+  if (number == "") {
+    n = DUMMIE_FALSY; //dummie value for falsy
+  } else if (number % 1 == 0) {
+    n = DUMMIE_TRUTHY; //dummie value for truthy
+  } else {
+    a = number.split(".");
+    n = a[1];
+  }
+  return n;
 }
 
 //validate height input data is right
