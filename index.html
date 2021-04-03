@@ -23,126 +23,130 @@
         <i class="header__nav-bar__icon fas fa-info-circle"></i>
       </nav>
     </header>
-    <form action="" class="input" onsubmit="return false">
-      <h2 class="input__title">Units</h2>
-      <div class="input__container-height">
-        <h3 class="input__container-height__title">Height</h3>
-        <input
-          type="radio"
-          name="height"
-          id="metric-height"
-          checked
-          class="input__container-height__radio"
-        />
-        <label for="metric-height" class="input__container-height__label"
-          >Metric</label
-        >
-        <input
-          type="radio"
-          name="height"
-          id="imperial-height"
-          class="input__container-height__radio"
-        />
-        <label for="imperial-height" class="input__container-height__label"
-          >Imperial</label
-        >
-      </div>
-      <div class="input__container-weight">
-        <h3 class="input__container-weight__title">Weight</h3>
-        <input
-          type="radio"
-          name="weight"
-          id="metric-weight"
-          checked
-          class="input__container-weight__radio"
-        />
-        <label for="metric-weight" class="input__container-weight__label"
-          >Metric</label
-        >
-        <input
-          type="radio"
-          name="weight"
-          id="imperial-weight"
-          class="input__container-weight__radio"
-        />
-        <label for="imperial-weight" class="input__container-weight__label"
-          >Imperial</label
-        >
-      </div>
-      <h2 class="input__title">Data input</h2>
-      <div class="input__container-cm-ft">
-        <input
-          type="number"
-          name="height-cm-ft"
-          id="height-cm-ft"
-          placeholder="Height"
-          required
-          step="0.01"
-          min="30"
-          max="275"
-          class="input__container-cm-ft__number"
-        />
-        <label for="height-cm-ft" class="input__container-cm-ft__label"
-          >cm</label
-        >
-      </div>
-      <div class="input__container-in">
-        <input
-          type="number"
-          name="height-in"
-          id="height-in"
-          placeholder="Height"
-          step="0.01"
-          min="0"
-          max="11.99"
-          class="input__container-in__number"
-        />
-        <label for="height-in" class="input__container-in__label">in</label>
-      </div>
-      <div class="input__container-kg-lb">
-        <input
-          type="number"
-          name="weight-kg-lb"
-          id="weight-kg-lb"
-          placeholder="Weight"
-          required
-          step="0.01"
-          min="1"
-          max="225"
-          class="input__container-kg-lb__number"
-        />
-        <label for="weight-kg-lb" class="input__container-kg-lb__label"
-          >kg</label
-        >
-      </div>
-      <button type="submit" class="input__button" onclick="submitData()">
-        Calulate BMI
-      </button>
-    </form>
-    <section class="output">
-      <div class="output__container">
-        <div class="output__container__bmi-container">
-          <p class="output__container__bmi-container_bmi-value">0</p>
-          <p class="output__container__bmi-container_bmi-title">BMI</p>
-          <p class="output__container__bmi-container_bmi-tag">None</p>
-        </div>
-        <hr class="output__container__line" />
-        <h3 class="output__container__title">Information</h3>
-        <div class="output__container__meter-container">
-          <span class="output__container__meter-container_tag"
-            >Underweight</span
+    <div class="container">
+      <form action="" class="input" onsubmit="return false">
+        <h2 class="input__title">Units</h2>
+        <div class="input__container-height">
+          <h3 class="input__container-height__title">Height</h3>
+          <input
+            type="radio"
+            name="height"
+            id="metric-height"
+            checked
+            class="input__container-height__radio"
+          />
+          <label for="metric-height" class="text-medium input__container-height__label"
+            >Metric</label
           >
-          <span class="output__container__meter-container_tag">Normal</span>
-          <span class="output__container__meter-container_tag">Overweight</span>
-          <span class="output__container__meter-container_meter"></span>
-          <span class="output__container__meter-container_value">16</span>
-          <span class="output__container__meter-container_value">18.5</span>
-          <span class="output__container__meter-container_value">25</span>
-          <span class="output__container__meter-container_value">30</span>
-          <span class="output__container__meter-container_value">40</span>
+          <input
+            type="radio"
+            name="height"
+            id="imperial-height"
+            class="input__container-height__radio"
+          />
+          <label for="imperial-height" class="text-medium input__container-height__label"
+            >Imperial</label
+          >
         </div>
-      </div>
-    </section>
+        <div class="input__container-weight">
+          <h3 class="input__container-weight__title">Weight</h3>
+          <input
+            type="radio"
+            name="weight"
+            id="metric-weight"
+            checked
+            class="input__container-weight__radio"
+          />
+          <label for="metric-weight" class="text-medium input__container-weight__label"
+            >Metric</label
+          >
+          <input
+            type="radio"
+            name="weight"
+            id="imperial-weight"
+            class="input__container-weight__radio"
+          />
+          <label for="imperial-weight" class="text-medium input__container-weight__label"
+            >Imperial</label
+          >
+        </div>
+        <h2 class="input__title">Data input</h2>
+        <div class="input-text-label input__container-cm-ft">
+          <input
+            type="number"
+            name="height-cm-ft"
+            id="height-cm-ft"
+            placeholder="Height"
+            required
+            step="0.01"
+            min="30"
+            max="275"
+            class="text-small-black input-text input__container-cm-ft__number"
+          />
+          <label for="height-cm-ft" class="text-small input__container-cm-ft__label"
+            >cm</label
+          >
+        </div>
+        <div class="input-text-label input__container-in">
+          <input
+            type="number"
+            name="height-in"
+            id="height-in"
+            placeholder="Height"
+            step="0.01"
+            min="0"
+            max="11.99"
+            class="text-small-black input-text input__container-in__number"
+          />
+          <label for="height-in" class="text-small input__container-in__label">in</label>
+        </div>
+        <div class="input-text-label input__container-kg-lb">
+          <input
+            type="number"
+            name="weight-kg-lb"
+            id="weight-kg-lb"
+            placeholder="Weight"
+            required
+            step="0.01"
+            min="1"
+            max="225"
+            class="text-small-black input-text input__container-kg-lb__number"
+          />
+          <label for="weight-kg-lb" class="text-small input__container-kg-lb__label"
+            >kg</label
+          >
+        </div>
+        <button type="submit" class="input__button" onclick="submitData()">
+          Calulate BMI
+        </button>
+      </form>
+      <section class="output">
+        <div class="output__container">
+          <div class="output__container__bmi-container">
+            <p class="output__container__bmi-container_bmi-value">0</p>
+            <p class="output__container__bmi-container_bmi-title">BMI</p>
+            <p class="output__container__bmi-container_bmi-tag">None</p>
+          </div>
+          <hr class="output__container__line" />
+          <p class="output__container__title text-large">Information</h3>
+          <div class="output__container__meter-container">
+            <span class="link-small output__container__meter-container_tag"
+              >Underweight</span
+            >
+            <span class="link-small output__container__meter-container_tag">Normal</span>
+            <span class="link-small output__container__meter-container_tag"
+              >Overweight</span
+            >
+            <span class="output__container__meter-container_meter"></span>
+            <span class="link-medium output__container__meter-container_value">16</span>
+            <span class="link-medium output__container__meter-container_value">18.5</span>
+            <span class="link-medium output__container__meter-container_value">25</span>
+            <span class="link-medium output__container__meter-container_value">30</span>
+            <span class="link-medium output__container__meter-container_value">40</span>
+          </div>
+        </div>
+      </section>
+    </div>
     <section class="modal">
       <i class="modal__icon fas fa-times"></i>
       <h3 class="modal__title">BMI Information</h3>

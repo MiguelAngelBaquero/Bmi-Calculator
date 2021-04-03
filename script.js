@@ -89,10 +89,13 @@ function changeBmiTagAndValue() {
   outputBmiValue.textContent = bmi;
   if (bmi < 18.5) {
     bmiTag.textContent = "Underweight";
+    bmiTag.style.color = "#f4b740";
   } else if (bmi > MIN_BMI_VALUE && bmi <= NORMAL_BMI_VALUE) {
     bmiTag.textContent = "Normal";
+    bmiTag.style.color = "#0096b7";
   } else if (bmi > NORMAL_BMI_VALUE) {
     bmiTag.textContent = "Overweight";
+    bmiTag.style.color = "#c30052";
   }
   return bmiTag.textContent;
 }
