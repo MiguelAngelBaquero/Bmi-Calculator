@@ -44,8 +44,10 @@ const MIN_CM_VALUE = 30,
   MIN_BMI_VALUE = 18.5,
   NORMAL_BMI_VALUE = 25,
   DECIMAL_PLACES = 2,
+  NO_DECIMAL_PLACES = 0,
   DUMMIE_FALSY = "123456789",
-  DUMMIE_TRUTHY = "12";
+  DUMMIE_TRUTHY = "12",
+  STEP_VALUE = "0.01";
 //aditional variables
 var mass = 0,
   height = 0,
@@ -61,6 +63,7 @@ radioMetricHeight.addEventListener("change", (event) => {
   labelInches.style.display = "none";
   inputCmFt.setAttribute("min", MIN_CM_VALUE);
   inputCmFt.setAttribute("max", MAX_CM_VALUE);
+  inputCmFt.setAttribute("step", STEP_VALUE);
 });
 radioImperialHeight.addEventListener("change", (event) => {
   isHeightMetric = false;
@@ -70,6 +73,7 @@ radioImperialHeight.addEventListener("change", (event) => {
   inputInches.style.display = "inline-block";
   inputCmFt.setAttribute("min", MIN_FT_VALUE);
   inputCmFt.setAttribute("max", MAX_FT_VALUE);
+  inputCmFt.removeAttribute("step");
 });
 radioMetricWeight.addEventListener("change", (event) => {
   isWeightMetric = true;
@@ -125,7 +129,7 @@ function validateInputLenght() {
       getDecimalPart(inputKgLb.value).length <= DECIMAL_PLACES
       ? (lenghtValidation = true)
       : (lenghtValidation = false)
-    : getDecimalPart(inputCmFt.value).length <= DECIMAL_PLACES &&
+    : inputCmFt.value % 1 == NO_DECIMAL_PLACES &&
       getDecimalPart(inputInches.value).length <= DECIMAL_PLACES &&
       getDecimalPart(inputKgLb.value).length <= DECIMAL_PLACES
     ? (lenghtValidation = true)
