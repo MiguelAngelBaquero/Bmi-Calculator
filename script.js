@@ -15,6 +15,8 @@ const radioMetricHeight = document.getElementById("metric-height"),
 const inputCmFt = document.getElementById("height-cm-ft"),
   inputInches = document.getElementById("height-in"),
   inputKgLb = document.getElementById("weight-kg-lb");
+//input container
+const inputInchesContainer = document.querySelector(".input__container-in");
 //labels
 const labelCmFt = document.querySelector(".input__container-cm-ft__label"),
   labelInches = document.querySelector(".input__container-in__label"),
@@ -61,6 +63,7 @@ radioMetricHeight.addEventListener("change", (event) => {
   inputInches.removeAttribute("required");
   inputInches.style.display = "none";
   labelInches.style.display = "none";
+  inputInchesContainer.style.display = "none";
   inputCmFt.setAttribute("min", MIN_CM_VALUE);
   inputCmFt.setAttribute("max", MAX_CM_VALUE);
   inputCmFt.setAttribute("step", STEP_VALUE);
@@ -69,8 +72,9 @@ radioImperialHeight.addEventListener("change", (event) => {
   isHeightMetric = false;
   labelCmFt.textContent = `ft ${event.target.value.replace("on", "")}`;
   inputInches.setAttribute("required", "");
-  labelInches.style.display = "inline";
-  inputInches.style.display = "inline-block";
+  labelInches.style.display = "block";
+  inputInches.style.display = "block";
+  inputInchesContainer.style.display = "flex";
   inputCmFt.setAttribute("min", MIN_FT_VALUE);
   inputCmFt.setAttribute("max", MAX_FT_VALUE);
   inputCmFt.removeAttribute("step");

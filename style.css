@@ -37,10 +37,12 @@ body {
 }
 
 .container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  max-width: 100%;
+  margin: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(500px, 700px);
+  grid-gap: 78px;
 }
 
 .output__container__meter-container_meter {
@@ -72,6 +74,57 @@ body {
 .input {
   background-color: #ffffff;
   border-radius: 32px;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "unitsTitle unitsTitle"
+    "heightContainer weightContainer"
+    "dataInputTitle dataInputTitle"
+    "textInputWraper textInputWraper"
+    "textInputWraper textInputWraper"
+    "inputButton inputButton";
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-column-gap: 95px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.input__title-1 {
+  grid-area: unitsTitle;
+}
+
+.input__container-height {
+  grid-area: heightContainer;
+  background: #eff0f7;
+  border-radius: 32px;
+}
+
+.input__container-weight {
+  grid-area: weightContainer;
+  background: #eff0f7;
+  border-radius: 32px;
+}
+
+.input__title-2 {
+  grid-area: dataInputTitle;
+}
+
+.text-input__wrapper {
+  grid-area: textInputWraper;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__button {
+  grid-area: inputButton;
+  max-width: 200px;
+  max-height: 65px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .output {
@@ -229,6 +282,12 @@ h3 {
   align-items: center;
   margin: 0 10px;
   padding: 0 10px;
+  width: 325px;
+  height: 64px;
+}
+
+.input__container-in {
+  display: none;
 }
 
 .input-text {
