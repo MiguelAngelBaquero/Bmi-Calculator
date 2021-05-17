@@ -17,6 +17,61 @@
     <script src="script.js" async></script>
   </head>
   <body>
+    <div class="overlay active" id="overlay">
+      <section class="modal" id="modal">
+        <i class="modal__icon fas fa-times" id="hide-modal"></i>
+        <h3 class="modal__title">BMI Information</h3>
+        <p class="modal__paragraph">
+          BMI is a measurement of a person's leanness or corpulence based on their
+          height and weight, and is intended to quantify tissue mass. It is widely
+          used as a general indicator of whether a person has a healthy body
+          weight for their height. Specifically, the value obtained from the
+          calculation of BMI is used to categorize whether a person is
+          underweight, normal weight, overweight, or obese depending on what range
+          the value falls between.
+        </p>
+        <h3 class="modal__title">BMI table for adults</h3>
+        <table class="modal__table">
+          <tr>
+            <th class="modal__table__header">Category</th>
+            <th class="modal__table__header">BMI range - kg/m&#178;</th>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Severe Thinness</td>
+            <td class="modal__table__row text-small">&#60;16</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Moderate Thinness</td>
+            <td class="modal__table__row text-small">16 - 17</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Mild Thinness</td>
+            <td class="modal__table__row text-small">17 - 18.5</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Normal</td>
+            <td class="modal__table__row text-small">18.5 - 25</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Overweight</td>
+            <td class="modal__table__row text-small">25 - 30</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Obese Class I</td>
+            <td class="modal__table__row text-small">30 - 35</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Obese Class II</td>
+            <td class="modal__table__row text-small">35 - 40</td>
+          </tr>
+          <tr>
+            <td class="modal__table__row text-small">Obese Class III</td>
+            <td class="modal__table__row text-small">&#62;40</td>
+          </tr>
+        </table>
+        <button class="modal__close-buton text-small" id="close-button">Close</button>
+      </section>
+    </div>
     <header class="header">
       <nav class="header__nav-bar">
         <h1 class="header__nav-bar__title">BMI Calculator</h1>
@@ -164,89 +219,36 @@
         </div>
       </section>
     </div>
-    <section class="modal">
-      <i class="modal__icon fas fa-times"></i>
-      <h3 class="modal__title">BMI Information</h3>
-      <p class="modal__paragraph">
-        BMI is a measurement of a person's leanness or corpulence based on their
-        height and weight, and is intended to quantify tissue mass. It is widely
-        used as a general indicator of whether a person has a healthy body
-        weight for their height. Specifically, the value obtained from the
-        calculation of BMI is used to categorize whether a person is
-        underweight, normal weight, overweight, or obese depending on what range
-        the value falls between.
-      </p>
-      <h3 class="modal__title">BMI table for adults</h3>
-      <table class="modal__table">
-        <tr>
-          <th class="modal__table__header">Category</th>
-          <th class="modal__table__header">BMI range - kg/m&#178;</th>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Severe Thinness</td>
-          <td class="modal__table__row">&#60;16</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Moderate Thinness</td>
-          <td class="modal__table__row">16 - 17</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Mild Thinness</td>
-          <td class="modal__table__row">17 - 18.5</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Normal</td>
-          <td class="modal__table__row">18.5 - 25</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Overweight</td>
-          <td class="modal__table__row">25 - 30</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Obese Class I</td>
-          <td class="modal__table__row">30 - 35</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Obese Class II</td>
-          <td class="modal__table__row">35 - 40</td>
-        </tr>
-        <tr>
-          <td class="modal__table__row">Obese Class III</td>
-          <td class="modal__table__row">&#62;40</td>
-        </tr>
-      </table>
-      <button class="modal__close-buton">Close</button>
-    </section>
     <footer class="footer">
       <span class="footer__item">
         Made with <i class="fas fa-heart"></i> and
         <i class="fas fa-mug-hot"></i> by Miguel Ángel Baquero from Quito,
         Ecuador</span
-      >
-      <a
+        >
+        <a
         href="https://github.com/MiguelAngelBaquero"
         target="_blank"
         rel="noopener noreferrer"
         class="footer__item"
-      >
+        >
         <i class="footer__item__icon fab fa-github"></i>
       </a>
       <a
-        href="https://twitter.com/mickey_migue"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer__item"
+      href="https://twitter.com/mickey_migue"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer__item"
       >
-        <i class="footer__item__icon fab fa-twitter"></i>
-      </a>
-      <a
-        href="https://www.instagram.com/mickey_migue"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer__item"
-      >
-        <i class="footer__item__icon fab fa-instagram"></i>
-      </a>
-    </footer>
+      <i class="footer__item__icon fab fa-twitter"></i>
+    </a>
+    <a
+    href="https://www.instagram.com/mickey_migue"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="footer__item"
+    >
+    <i class="footer__item__icon fab fa-instagram"></i>
+  </a>
+</footer>
   </body>
 </html>

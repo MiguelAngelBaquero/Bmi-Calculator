@@ -1,6 +1,7 @@
 //variables definition
-//modal
-const modalContainer = document.querySelector(".modal");
+//modal and overlay
+const modalContainer = document.querySelector(".modal"),
+  overlay = document.getElementById("overlay");
 //icons
 const iconInfo = document.querySelector(".header__nav-bar__icon"),
   iconClose = document.querySelector(".modal__icon");
@@ -257,15 +258,31 @@ function defineMass() {
 }
 
 //show modal
+// iconInfo.addEventListener("click", (event) => {
+//   modalContainer.style.display = "block";
+//   iconClose.addEventListener("click", hideModal);
+//   buttonCloseModal.addEventListener("click", hideModal);
+// });
+
+//show modal
 iconInfo.addEventListener("click", (event) => {
-  modalContainer.style.display = "block";
+  modalContainer.style.animation = "modalIn .8s forwards";
+  overlay.classList.remove("active");
   iconClose.addEventListener("click", hideModal);
   buttonCloseModal.addEventListener("click", hideModal);
 });
 
+overlay.addEventListener("click", (event) => {
+  if (event.target === overlay) {
+    modalContainer.style.animation = "modalOut .8s forwards";
+    overlay.classList.add("active");
+  }
+});
+
 //hide modal
-function hideModal(action) {
+function hideModal() {
+  modalContainer.style.animation = "modalOut .8s forwards";
+  overlay.classList.add("active");
   iconClose.removeEventListener("click", hideModal);
   buttonCloseModal.removeEventListener("click", hideModal);
-  modalContainer.style.display = "none";
 }
