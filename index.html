@@ -28,47 +28,59 @@
         <h2 class="input__title input__title-1">Units</h2>
         <div class="input__container-height">
           <h3 class="input__container-height__title">Height</h3>
-          <input
-            type="radio"
-            name="height"
-            id="metric-height"
-            checked
-            class="input__container-height__radio"
-          />
-          <label for="metric-height" class="text-medium input__container-height__label"
-            >Metric</label
-          >
-          <input
-            type="radio"
-            name="height"
-            id="imperial-height"
-            class="input__container-height__radio"
-          />
-          <label for="imperial-height" class="text-medium input__container-height__label"
-            >Imperial</label
-          >
+          <div class="radio-container">
+            <input
+              type="radio"
+              name="height"
+              id="metric-height"
+              checked
+              class="input__container-height__radio"
+            />
+            <label for="metric-height" class="text-medium input__container-height__label"
+              >Metric</label
+            >
+            <div class="check"></div>
+          </div>
+          <div class="radio-container">
+            <input
+              type="radio"
+              name="height"
+              id="imperial-height"
+              class="input__container-height__radio"
+            />
+            <label for="imperial-height" class="text-medium input__container-height__label"
+              >Imperial</label
+            >
+            <div class="check"></div>
+          </div>
         </div>
         <div class="input__container-weight">
           <h3 class="input__container-weight__title">Weight</h3>
-          <input
-            type="radio"
-            name="weight"
-            id="metric-weight"
-            checked
-            class="input__container-weight__radio"
-          />
-          <label for="metric-weight" class="text-medium input__container-weight__label"
-            >Metric</label
-          >
-          <input
-            type="radio"
-            name="weight"
-            id="imperial-weight"
-            class="input__container-weight__radio"
-          />
-          <label for="imperial-weight" class="text-medium input__container-weight__label"
-            >Imperial</label
-          >
+          <div class="radio-container">
+            <input
+              type="radio"
+              name="weight"
+              id="metric-weight"
+              checked
+              class="input__container-weight__radio"
+            />
+            <label for="metric-weight" class="text-medium input__container-weight__label"
+              >Metric</label
+            >
+            <div class="check"></div>
+          </div>
+          <div class="radio-container">
+            <input
+              type="radio"
+              name="weight"
+              id="imperial-weight"
+              class="input__container-weight__radio"
+            />
+            <label for="imperial-weight" class="text-medium input__container-weight__label"
+              >Imperial</label
+            >
+            <div class="check"></div>
+          </div>
         </div>
         <h2 class="input__title input__title-2">Data input</h2>
         <div class="text-input__wrapper">
@@ -119,7 +131,7 @@
           </div>
         </div>
         <button type="submit" class="input__button" onclick="submitData()">
-          Calulate BMI
+          Calculate BMI
         </button>
       </form>
       <section class="output">
@@ -132,19 +144,22 @@
           <hr class="output__container__line" />
           <p class="output__container__title text-large">Information</h3>
           <div class="output__container__meter-container">
-            <span class="link-small output__container__meter-container_tag"
-              >Underweight</span
-            >
-            <span class="link-small output__container__meter-container_tag">Normal</span>
-            <span class="link-small output__container__meter-container_tag"
-              >Overweight</span
-            >
+            <div class="meter-tag-container">
+              <span class="link-small output__container__meter-container_tag"
+                >Underweight</span
+              >
+              <span class="link-small output__container__meter-container_tag">Normal</span>
+              <span class="link-small output__container__meter-container_tag"
+                >Overweight</span>
+            </div>
             <span class="output__container__meter-container_meter"></span>
-            <span class="link-medium output__container__meter-container_value">16</span>
-            <span class="link-medium output__container__meter-container_value">18.5</span>
-            <span class="link-medium output__container__meter-container_value">25</span>
-            <span class="link-medium output__container__meter-container_value">30</span>
-            <span class="link-medium output__container__meter-container_value">40</span>
+            <div class="container-meter-values">
+              <span class="link-medium output__container__meter-container_value">16</span>
+              <span class="link-medium output__container__meter-container_value">18.5</span>
+              <span class="link-medium output__container__meter-container_value">25</span>
+              <!-- <span class="link-medium output__container__meter-container_value">30</span> -->
+              <span class="link-medium output__container__meter-container_value">40</span>
+            </div>
           </div>
         </div>
       </section>

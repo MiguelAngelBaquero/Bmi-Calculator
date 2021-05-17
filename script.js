@@ -123,6 +123,28 @@ function submitData() {
 function calculateAfterValidation() {
   calculateBmi(mass, height);
   changeBmiTagAndValue();
+  //animation
+  const beating = bmiTag.animate(
+    [
+      {
+        transform: "scale(1)",
+      },
+      //to
+      {
+        transform: "scale(1.25)",
+      },
+      //to
+      {
+        transform: "scale(1)",
+      },
+    ],
+    {
+      duration: 1000,
+      easing: "ease-in-out",
+      iterations: 3,
+      fill: "forwards",
+    }
+  );
 }
 
 //validate input lenght
