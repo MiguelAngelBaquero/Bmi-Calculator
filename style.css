@@ -498,6 +498,8 @@ h3 {
   border-style: none;
   background-color: #ffffff;
   outline: none;
+  text-shadow: none;
+  box-shadow: none;
   margin: 1.5em;
   will-change: transform;
   transition: 300ms;
