@@ -1,12 +1,14 @@
 //variables definition
 //modal and overlay
 const modalContainer = document.querySelector(".modal"),
-  overlay = document.getElementById("overlay");
+  overlay = document.getElementById("overlay"),
+  outputOverlay = document.getElementById("output-overlay");
 //icons
 const iconInfo = document.querySelector(".header__nav-bar__icon"),
   iconClose = document.querySelector(".modal__icon");
 //buttons
-const buttonCloseModal = document.querySelector(".modal__close-buton");
+const buttonCloseModal = document.querySelector(".modal__close-button"),
+  buttonCloseOutput = document.querySelector(".output__close-button");
 //radio
 const radioMetricHeight = document.getElementById("metric-height"),
   radioImperialHeight = document.getElementById("imperial-height"),
@@ -28,7 +30,8 @@ const bmiTag = document.querySelector(
   ),
   outputBmiValue = document.querySelector(
     ".output__container__bmi-container_bmi-value"
-  );
+  ),
+  outputContainer = document.querySelector(".output__container");
 //constants
 const MIN_CM_VALUE = 30,
   MAX_CM_VALUE = 275,
@@ -124,7 +127,13 @@ function submitData() {
 function calculateAfterValidation() {
   calculateBmi(mass, height);
   changeBmiTagAndValue();
-  //animation
+
+  // show output
+  outputContainer.style.animation = "modalIn .8s forwards";
+  outputOverlay.classList.remove("output-active");
+  buttonCloseOutput.addEventListener("click", hideOutput);
+
+  // animation
   const beating = bmiTag.animate(
     [
       {
@@ -142,7 +151,7 @@ function calculateAfterValidation() {
     {
       duration: 1000,
       easing: "ease-in-out",
-      iterations: 3,
+      iterations: 5,
       fill: "forwards",
     }
   );
@@ -272,10 +281,19 @@ iconInfo.addEventListener("click", (event) => {
   buttonCloseModal.addEventListener("click", hideModal);
 });
 
+// hide modal when click outside
 overlay.addEventListener("click", (event) => {
   if (event.target === overlay) {
     modalContainer.style.animation = "modalOut .8s forwards";
     overlay.classList.add("active");
+  }
+});
+
+// hide output when clik outside
+outputOverlay.addEventListener("click", (event) => {
+  if (event.target === outputOverlay) {
+    outputContainer.style.animation = "modalOut .8s forwards";
+    outputOverlay.classList.add("output-active");
   }
 });
 
@@ -285,4 +303,11 @@ function hideModal() {
   overlay.classList.add("active");
   iconClose.removeEventListener("click", hideModal);
   buttonCloseModal.removeEventListener("click", hideModal);
+}
+
+//hide output
+function hideOutput() {
+  outputContainer.style.animation = "modalOut .8s forwards";
+  outputOverlay.classList.add("output-active");
+  buttonCloseOutput.removeEventListener("click", hideOutput);
 }

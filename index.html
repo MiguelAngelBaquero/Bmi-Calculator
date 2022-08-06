@@ -69,7 +69,36 @@
             <td class="modal__table__row text-small">&#62;40</td>
           </tr>
         </table>
-        <button class="modal__close-buton text-small" id="close-button">Close</button>
+        <button class="modal__close-button text-small" id="close-button">Close</button>
+      </section>
+    </div>
+    <div class="output-overlay output-active" id="output-overlay">
+      <section class="output__container">
+        <div class="output__container__bmi-container">
+          <p class="output__container__bmi-container_bmi-value">0</p>
+          <p class="output__container__bmi-container_bmi-title">BMI</p>
+          <p class="output__container__bmi-container_bmi-tag">None</p>
+        </div>
+        <hr class="output__container__line" />
+        <p class="output__container__title text-large">Information</h3>
+        <div class="output__container__meter-container">
+          <div class="meter-tag-container">
+            <span class="link-small output__container__meter-container_tag"
+              >Underweight</span
+            >
+            <span class="link-small output__container__meter-container_tag">Normal</span>
+            <span class="link-small output__container__meter-container_tag"
+              >Overweight</span>
+          </div>
+          <span class="output__container__meter-container_meter"></span>
+          <div class="container-meter-values">
+            <span class="link-medium output__container__meter-container_value">16</span>
+            <span class="link-medium output__container__meter-container_value">18.5</span>
+            <span class="link-medium output__container__meter-container_value">25</span>
+            <span class="link-medium output__container__meter-container_value">40</span>
+          </div>
+          <button class="output__close-button" id="output-close-button">Close</button>
+        </div>
       </section>
     </div>
     <header class="header">
@@ -189,34 +218,6 @@
           Calculate BMI
         </button>
       </form>
-      <section class="output">
-        <div class="output__container">
-          <div class="output__container__bmi-container">
-            <p class="output__container__bmi-container_bmi-value">0</p>
-            <p class="output__container__bmi-container_bmi-title">BMI</p>
-            <p class="output__container__bmi-container_bmi-tag">None</p>
-          </div>
-          <hr class="output__container__line" />
-          <p class="output__container__title text-large">Information</h3>
-          <div class="output__container__meter-container">
-            <div class="meter-tag-container">
-              <span class="link-small output__container__meter-container_tag"
-                >Underweight</span
-              >
-              <span class="link-small output__container__meter-container_tag">Normal</span>
-              <span class="link-small output__container__meter-container_tag"
-                >Overweight</span>
-            </div>
-            <span class="output__container__meter-container_meter"></span>
-            <div class="container-meter-values">
-              <span class="link-medium output__container__meter-container_value">16</span>
-              <span class="link-medium output__container__meter-container_value">18.5</span>
-              <span class="link-medium output__container__meter-container_value">25</span>
-              <span class="link-medium output__container__meter-container_value">40</span>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
     <footer class="footer">
       <span class="footer__item">

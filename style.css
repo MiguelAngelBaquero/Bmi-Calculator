@@ -4,13 +4,14 @@ body {
   color: aliceblue; */
   background-color: #f7f7fc;
   font-family: "Poppins", sans-serif;
-  width: 100vw;
+  width: 100%;
   margin: 0;
 }
 
 .footer__item {
   text-decoration: none;
   color: black;
+  font-size: 0.8rem;
   /*color: aliceblue;*/
 }
 
@@ -20,7 +21,7 @@ body {
 }
 
 .header__nav-bar__icon {
-  font-size: 40px;
+  font-size: 2rem;
   cursor: pointer;
   will-change: transform;
   transition: 300ms;
@@ -30,21 +31,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 30px 40px;
+  margin: 1rem;
 }
 
 .container {
   max-width: 100%;
-  margin: 40px;
-  display: grid;
+  margin: 0;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: minmax(500px, 700px);
-  grid-gap: 78px;
+  grid-gap: 78px; */
 }
 
 .output__container__meter-container_meter {
   height: 12px;
-  width: 657px;
+  min-width: 300px;
   border-radius: 6px;
   box-shadow: 0 5px 5px -5px #999 inset;
   background-color: blue;
@@ -63,7 +64,7 @@ body {
 
 .output__container__line {
   border: 0 solid #000000;
-  width: 443px;
+  width: 80%;
   height: 5px;
   background-color: #000000;
 }
@@ -71,7 +72,8 @@ body {
 .input {
   background-color: #ffffff;
   border-radius: 32px;
-  width: 100%;
+  min-width: 300px;
+  margin: 0.5rem;
   display: grid;
   grid-template-areas:
     "unitsTitle unitsTitle"
@@ -82,17 +84,18 @@ body {
     "inputButton inputButton";
   align-items: center;
   text-align: center;
+  justify-content: space-evenly;
 }
 
 .input__title-1 {
   grid-area: unitsTitle;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .input__container-height,
 .input__container-weight {
-  width: 330px;
-  min-height: 200px;
+  min-width: 140px;
+  min-height: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +114,7 @@ body {
 
 .input__title-2 {
   grid-area: dataInputTitle;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .text-input__wrapper {
@@ -120,20 +123,20 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  height: 150px;
+  min-height: 150px;
 }
 
 .input__button {
   grid-area: inputButton;
-  width: 200px;
-  height: 65px;
+  width: 180px;
+  height: 55px;
   margin: auto;
   background: #5f2eea;
   border-radius: 40px;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   /* or 175% */
   letter-spacing: 0.75px;
   /* Grayscale / Background */
@@ -142,9 +145,32 @@ body {
   transition: 300ms;
   cursor: pointer;
   will-change: transform, background-color;
+  margin-bottom: 0.5rem;
 }
 
-.input__button:active {
+.output__close-button {
+  width: 180px;
+  height: 55px;
+  border: 2px solid #5f2eea;
+  background: transparent;
+  border-radius: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  /* or 175% */
+  letter-spacing: 0.75px;
+  /* Grayscale / Background */
+  color: #5f2eea;
+  /* border-style: none; */
+  transition: 300ms;
+  cursor: pointer;
+  will-change: transform, background-color;
+  margin-top: 1rem;
+}
+
+.input__button:active,
+.output__close-button:active {
   transform: scale(1.05);
   transition: 300ms;
 }
@@ -156,7 +182,7 @@ body {
 
 .radio-container {
   display: block;
-  width: 10rem;
+  width: 80%;
   margin: 0;
   position: relative;
   float: left;
@@ -189,9 +215,9 @@ body {
   border: 8px solid #aaaaaa;
   background-color: #aaaaaa;
   border-radius: 100%;
-  height: 16px;
-  width: 16px;
-  top: 10px;
+  height: 0.6rem;
+  width: 0.6rem;
+  top: 0.25rem;
   /* left: -10px; */
   z-index: 1;
   transition: 300ms;
@@ -209,8 +235,8 @@ body {
   position: absolute;
   content: "";
   border-radius: 100%;
-  height: 16px;
-  width: 16px;
+  height: 0.6rem;
+  width: 0.6rem;
   top: 0;
   left: 0;
   margin: auto;
@@ -235,8 +261,8 @@ input[type="radio"]:checked ~ label {
 h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 66px;
+  font-size: 2rem;
+  line-height: 2rem;
   /* or 103% */
   letter-spacing: 1px;
   /* Grayscale / Title-Active */
@@ -247,8 +273,8 @@ h1 {
 h2 {
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
-  line-height: 34px;
+  font-size: 1.3rem;
+  line-height: 2rem;
   /* or 106% */
   letter-spacing: 1px;
   color: #000000;
@@ -257,32 +283,11 @@ h2 {
 h3 {
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 38px;
+  font-size: 1rem;
+  line-height: 2rem;
   /* identical to box height, or 158% */
   letter-spacing: 0.75px;
   color: #000000;
-}
-
-.output {
-  background-color: #ffffff;
-  border-radius: 32px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.output__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #eff0f7;
-  border-radius: 32px;
-  width: 90%;
-  height: 60%;
 }
 
 .output__container__bmi-container {
@@ -306,8 +311,8 @@ h3 {
   grid-column: 1;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px;
-  line-height: 80px;
+  font-size: 3rem;
+  line-height: 3rem;
   /* or 111% */
   letter-spacing: 1px;
   /* Primary / Default */
@@ -319,8 +324,8 @@ h3 {
   grid-column: 2;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
-  line-height: 80px;
+  font-size: 2rem;
+  line-height: 2rem;
   /* or 125% */
   letter-spacing: 1px;
   /* Primary / Dark */
@@ -332,8 +337,8 @@ h3 {
   grid-column: 2;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 34px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   letter-spacing: 0.75px;
   animation: none;
   will-change: transform;
@@ -342,8 +347,8 @@ h3 {
 .text-large {
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 38px;
+  font-size: 1rem;
+  line-height: 1rem;
   /* or 158% */
   letter-spacing: 0.75px;
   color: #000000;
@@ -352,8 +357,8 @@ h3 {
 .text-medium {
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 34px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   /* or 189% */
   letter-spacing: 0.75px;
   color: #000000;
@@ -362,8 +367,8 @@ h3 {
 .text-small {
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
   /* identical to box height, or 175% */
   letter-spacing: 0.75px;
   /* Grayscale / Label */
@@ -373,8 +378,8 @@ h3 {
 .text-small-black {
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
   /* identical to box height, or 175% */
   letter-spacing: 0.75px;
   /* Grayscale / Label */
@@ -384,8 +389,8 @@ h3 {
 .link-small {
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
   /* identical to box height, or 175% */
   letter-spacing: 0.75px;
   /* Grayscale / Label */
@@ -395,8 +400,8 @@ h3 {
 .link-medium {
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 34px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   /* identical to box height, or 189% */
   letter-spacing: 0.75px;
   /* Grayscale / Body */
@@ -409,10 +414,8 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10px;
-  padding: 0 10px;
-  width: 325px;
-  height: 64px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .input__container-in {
@@ -423,7 +426,7 @@ h3 {
   font-family: Poppins;
   border-style: none;
   background: none;
-  width: 18rem;
+  min-width: 175px;
 }
 
 .input-text:focus-visible {
@@ -443,16 +446,17 @@ h3 {
 }
 
 .footer {
-  margin: 10px;
+  margin: 0.5rem;
   text-align: center;
 }
 
 .footer__item__icon {
   margin: 10px;
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
-.overlay {
+.overlay,
+.output-overlay {
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   left: 0;
@@ -468,21 +472,17 @@ h3 {
   align-items: center;
 }
 
-.overlay.active {
+.overlay.active,
+.output-overlay.output-active {
   opacity: 0;
   visibility: hidden;
 }
 
-.modal {
-  position: inherit;
-  background-color: #ffffff;
-  border-radius: 32px;
-  width: 46%;
+.modal,
+.output__container {
   height: fit-content;
   animation: none;
   will-change: transform;
-  padding: 2em;
-  border-radius: 0.5em;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -492,7 +492,26 @@ h3 {
   z-index: 4;
 }
 
-.modal__close-buton {
+.output__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff0f7;
+  border-radius: 32px;
+  width: 90%;
+  height: 60%;
+}
+
+.modal {
+  background-color: #ffffff;
+  width: 80%;
+  position: inherit;
+  padding: 2em;
+  border-radius: 0.5em;
+}
+
+.modal__close-button {
   border: none;
   cursor: pointer;
   border-style: none;
